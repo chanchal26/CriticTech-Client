@@ -14,16 +14,28 @@ const SignUp = () => {
                             </div>
                             <Form action="#" method="POST" className="space-y-6">
                                 <div>
+                                    <label htmlFor="name" className="block text-sm font-medium text-neutral-600"> Full Name </label>
+                                    <div className="mt-1">
+                                        <input id="name" name="name" type="text" autoComplete="name" required placeholder="Your Name" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label htmlFor="url" className="block text-sm font-medium text-neutral-600"> Photo URL </label>
+                                    <div className="mt-1">
+                                        <input id="url" name="url" type="url" autoComplete="url" required placeholder="Your Photo URL" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                    </div>
+                                </div>
+                                <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-neutral-600"> Email address </label>
                                     <div className="mt-1">
-                                        <input id="email" name="email" type="email" autoComplete="email" required="" placeholder="Your Email" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                        <input id="email" name="email" type="email" autoComplete="email" required placeholder="Your Email" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                                     </div>
                                 </div>
 
                                 <div className="space-y-1">
                                     <label htmlFor="password" className="block text-sm font-medium text-neutral-600"> Password </label>
                                     <div className="mt-1">
-                                        <input id="password" name="password" type="password" autoComplete="current-password" required="" placeholder="Your Password" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
+                                        <input id="password" name="password" type="password" autoComplete="current-password" required placeholder="Your Password" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                                     </div>
                                 </div>
 
@@ -34,7 +46,7 @@ const SignUp = () => {
                                     </div>
 
                                     <div className="text-sm">
-                                        <Link href="#" className="font-medium text-blue-600 hover:text-blue-500">  Forgot your password? </Link>
+                                        <Link href="#" className="font-medium text-blue-600 hover:text-blue-500">  Al-ready have an Account? </Link>
                                     </div>
                                 </div>
 

@@ -9,8 +9,8 @@ const Header = () => {
             <div className="relative flex items-center justify-between">
                 <Link
                     to="/"
-                    aria-label="Company"
-                    title="Company"
+                    aria-label="CriticTech"
+                    title="CriticTech"
                     className="inline-flex items-center"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" className="w-8 h-8 text-purple-400 dark:text-violet-400">
@@ -25,9 +25,9 @@ const Header = () => {
                     <li>
                         <Link
                             to="/courses"
-                            aria-label="Our product"
-                            title="Our product"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            aria-label="Courses"
+                            title="Courses"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                         >
                             Courses
                         </Link>
@@ -35,9 +35,9 @@ const Header = () => {
                     <li>
                         <Link
                             to="/faq"
-                            aria-label="Our product"
-                            title="Our product"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            aria-label="FAQ"
+                            title="FAQ"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                         >
                             FAQ
                         </Link>
@@ -45,21 +45,15 @@ const Header = () => {
                     <li>
                         <Link
                             to="/blogs"
-                            aria-label="Product pricing"
-                            title="Product pricing"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                            aria-label="Blogs"
+                            title="Blogs"
+                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                         >
                             Blogs
                         </Link>
                     </li>
                     <li>
-                        <Link
-                            aria-label="About us"
-                            title="About us"
-                            className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                            Dark
-                        </Link>
+                        <button className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400">Dark</button>
                     </li>
                 </ul>
                 <ul className="flex items-center hidden space-x-8 lg:flex">
@@ -113,8 +107,8 @@ const Header = () => {
                                     <div>
                                         <Link
                                             to="/"
-                                            aria-label="Company"
-                                            title="Company"
+                                            aria-label="CriticTech"
+                                            title="CriticTech"
                                             className="inline-flex items-center"
                                         >
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" className="w-8 h-8 text-purple-400 dark:text-violet-400">
@@ -147,9 +141,9 @@ const Header = () => {
                                         <li>
                                             <Link
                                                 to="/courses"
-                                                aria-label="Our product"
-                                                title="Our product"
-                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                aria-label="Courses"
+                                                title="Courses"
+                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                                             >
                                                 Courses
                                             </Link>
@@ -157,9 +151,9 @@ const Header = () => {
                                         <li>
                                             <Link
                                                 to="/faq"
-                                                aria-label="Our product"
-                                                title="Our product"
-                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                aria-label="FAQ"
+                                                title="FAQ"
+                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                                             >
                                                 FAQ
                                             </Link>
@@ -167,21 +161,15 @@ const Header = () => {
                                         <li>
                                             <Link
                                                 to="/blog"
-                                                aria-label="Product pricing"
-                                                title="Product pricing"
-                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                                                aria-label="Blog"
+                                                title="Blog"
+                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                                             >
                                                 Blog
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link
-                                                aria-label="About us"
-                                                title="About us"
-                                                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                                            >
-                                                Dark
-                                            </Link>
+                                            <button className="btn btn-outline font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400">Button</button>
                                         </li>
                                         <li>
                                             <Link
