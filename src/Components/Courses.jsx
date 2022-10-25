@@ -31,11 +31,11 @@ const Courses = () => {
                                     </div>
                                     <div className="flex flex-col justify-between flex-1 p-6 bg-white">
                                         <div className="flex-1">
-                                            <Link href="#" className="block mt-2">
+                                            <div className="block mt-2">
                                                 <p className="text-xl font-semibold text-neutral-600">{category.name}</p>
                                                 <p className="mt-3 text-base text-gray-500">{category.description.slice(0, 150) + "..."}</p>
                                                 <button className='bg-green-600 hover:bg-green-400 text-white px-10 py-1 mt-5'><Link to={`/courses/${category.id}`}>Show Details</Link></button>
-                                            </Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

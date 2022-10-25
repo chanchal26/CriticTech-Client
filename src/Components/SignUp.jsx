@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Form, Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../Contexts/UserContext';
 import { toast } from 'react-toastify';
@@ -51,14 +51,14 @@ const SignUp = () => {
     const handleGoogleLogin = () => {
         signInWithGoogle().then(result => {
             console.log(result.user)
-            Navigate(from, { replace: true })
+            navigate(from, { replace: true })
         })
     }
 
     const handleGithubLogin = () => {
         signInWithGithub().then(result => {
             console.log(result.user)
-            Navigate(from, { replace: true })
+            navigate(from, { replace: true })
         })
     }
 
