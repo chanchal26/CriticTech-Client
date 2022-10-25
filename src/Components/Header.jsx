@@ -1,8 +1,11 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Contexts/UserContext';
 
 const Header = () => {
+    const { userImpl, logout } = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -57,26 +60,40 @@ const Header = () => {
                     </li>
                 </ul>
                 <ul className="flex items-center hidden space-x-8 lg:flex">
-                    <li>
-                        <Link
-                            to="/signIn"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
-                            aria-label="Sign up"
-                            title="Sign up"
-                        >
-                            Sign In
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/signUp"
-                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
-                            aria-label="Sign up"
-                            title="Sign up"
-                        >
-                            Sign Up
-                        </Link>
-                    </li>
+                    {
+                        userImpl?.uid ? <>
+                            <li>
+                                <button onClick={logout()} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                                >Sign Out</button>
+                            </li>
+                            <li>
+                                <img className='w-16 rounded-full' src={userImpl.photoURL} alt="" />
+                            </li>
+                        </>
+                            : <>
+                                <li>
+                                    <Link
+                                        to="/signIn"
+                                        className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                                        aria-label="Sign up"
+                                        title="Sign up"
+                                    >
+                                        Sign In
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link
+                                        to="/signUp"
+                                        className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                                        aria-label="Sign up"
+                                        title="Sign up"
+                                    >
+                                        Sign Up
+                                    </Link>
+                                </li>
+                            </>
+                    }
+
                 </ul>
                 <div className="lg:hidden">
                     <button

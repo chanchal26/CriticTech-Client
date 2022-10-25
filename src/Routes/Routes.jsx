@@ -5,6 +5,7 @@ import ErrorPage from "../Components/ErrorPage";
 import FAQ from "../Components/FAQ";
 import SignIn from "../Components/SignIn";
 import SignUp from "../Components/SignUp";
+import SingleCourse from "../Components/SingleCourse";
 import Main from "../Layout/Main";
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
             {
                 path: '/courses',
                 element: <Courses />
+            },
+            {
+                path: '/courses/:id',
+                element: <SingleCourse />
             },
             {
                 path: '/faq',

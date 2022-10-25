@@ -1,8 +1,68 @@
-import React from 'react';
-import { Form, Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Form, Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
+import { AuthContext } from '../Contexts/UserContext';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+    const { createUser, updateName, verifyEmail, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+
+
+    const handleSubmit = event => {
+        event.preventDefault()
+        const form = event.target;
+        const photoURL = form.url.value;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(photoURL, name, email, password);
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+
+                updateName(name, photoURL)
+                    .then(() => {
+                        toast.success('Name and URL Updated')
+
+
+                        verifyEmail()
+                            .then(() => {
+                                toast.success('Please check your email for verification link')
+                                navigate(from, { replace: true })
+                            })
+                            .catch(error => {
+                                toast.error(error.message)
+                            })
+                    })
+                    .catch(error => {
+                        toast.error(error.message)
+                    })
+            })
+            .catch(error => console.log(error))
+
+    }
+
+
+    const handleGoogleLogin = () => {
+        signInWithGoogle().then(result => {
+            console.log(result.user)
+            Navigate(from, { replace: true })
+        })
+    }
+
+    const handleGithubLogin = () => {
+        signInWithGithub().then(result => {
+            console.log(result.user)
+            Navigate(from, { replace: true })
+        })
+    }
+
+
     return (
         <div>
             <div className=" items-center px-5 py-6 lg:px-20">
@@ -12,7 +72,7 @@ const SignUp = () => {
                             <div className='pb-5'>
                                 <h2 className="mt-6 text-3xl font-extrabold text-neutral-600">Sign Up.</h2>
                             </div>
-                            <Form action="#" method="POST" className="space-y-6">
+                            <Form onSubmit={handleSubmit} action="#" method="POST" className="space-y-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-medium text-neutral-600"> Full Name </label>
                                     <div className="mt-1">
@@ -46,12 +106,12 @@ const SignUp = () => {
                                     </div>
 
                                     <div className="text-sm">
-                                        <Link href="#" className="font-medium text-blue-600 hover:text-blue-500">  Al-ready have an Account? </Link>
+                                        <Link to="/signIn" className="font-medium text-blue-600 hover:text-blue-500">  Al-ready have an Account? </Link>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <button type="submit" className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transhtmlForm bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Sign in</button>
+                                    <button type="submit" className="flex items-center justify-center w-full px-10 py-4 text-base font-medium text-center text-white transition duration-500 ease-in-out transhtmlForm bg-blue-600 rounded-xl hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Sign Up</button>
                                 </div>
                             </Form>
                             <div className="relative my-4">
@@ -63,7 +123,7 @@ const SignUp = () => {
                                 </div>
                             </div>
                             <div>
-                                <button type="submit" className="mb-5 w-full items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transhtmlForm border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                                <button onClick={handleGoogleLogin} type="submit" className="mb-5 w-full items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transhtmlForm border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                     <div className="flex items-center justify-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" className="w-6 h-6" viewBox="0 0 48 48">
                                             <defs>
@@ -80,7 +140,7 @@ const SignUp = () => {
                                         <span className="ml-4"> Log in with Google</span>
                                     </div>
                                 </button>
-                                <button type="submit" className="w-full items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transhtmlForm border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                                <button onClick={handleGithubLogin} type="submit" className="w-full items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transhtmlForm border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                     <div className="flex items-center justify-center">
                                         <FaGithub className='text-gray-600' />
                                         <span className="ml-4"> Log in with Github</span>
