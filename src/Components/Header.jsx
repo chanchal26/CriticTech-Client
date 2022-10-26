@@ -56,7 +56,11 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
-                        <button className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400">Dark</button>
+                        <button className="mt-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"><label className="swap">
+                            <input type="checkbox" />
+                            <div className="swap-on">Dark</div>
+                            <div className="swap-off">Light</div>
+                        </label></button>
                     </li>
                 </ul>
                 <ul className="flex items-center hidden space-x-8 lg:flex">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const SingleCourse = () => {
     const data = useLoaderData();
@@ -56,6 +56,10 @@ const SingleCourse = () => {
                 <p className="max-w-xl mb-4 text-base text-gray-700 sm:mx-auto">
                     {data.description}
                 </p>
+                <div className='gap-5'>
+                    <Link to='/price' className='mr-4 mb-4'><button className="btn btn-wide">Get Premium Access</button></Link>
+                    <Link><button className="btn btn-wide">Download PDF</button></Link>
+                </div>
             </div>
         </div>
     );

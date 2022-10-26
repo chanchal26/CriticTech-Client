@@ -1,21 +1,19 @@
 import React, { useContext } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
-import { AuthContext } from '../contexts/UserContext'
+import { AuthContext } from '../Contexts/UserContext'
 
 const PrivateRoutes = ({ children }) => {
     const { user, loading } = useContext(AuthContext)
     const location = useLocation()
-    console.log(loading)
+
     if (loading) {
-        return <div className='flex justify-center items-center min-h-screen'>
-            <div className='w-16 h-16 border-4 border-dashed rounded-full animate-spin border-gray-800'></div>
-        </div>
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
     }
 
     if (user && user.uid) {
         return children
     }
-    return <Navigate to='/login' state={{ from: location }} replace />
+    return <Navigate to='/signIn' state={{ from: location }} replace />
 
 };
 
