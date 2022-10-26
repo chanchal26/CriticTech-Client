@@ -20,8 +20,8 @@ const Courses = () => {
                     categories.map(category => <p className='text-center py-3 text-green-700 hover:text-green-400' key={category.id}><Link to={`/courses/${category.id}`}>{category.name}</Link></p>)
                 }
             </div>
-            <div className="relative px-4 py-12 sm:px-6 lg:py-16 lg:px-8 col-span-5">
-                <div className="relative mx-auto max-w-7xl">
+            <div className=" px-4 py-12 sm:px-6 lg:py-16 lg:px-8 col-span-5">
+                <div className=" mx-auto max-w-7xl">
                     <div className="grid max-w-lg gap-5 mx-auto lg:grid-cols-3 lg:max-w-none">
                         {
                             categories.map(category =>

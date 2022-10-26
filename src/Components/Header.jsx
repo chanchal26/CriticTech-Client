@@ -190,6 +190,13 @@ const Header = () => {
                                             </Link>
                                         </li>
                                         <li>
+                                            <button className="mt-2 font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"><label className="swap">
+                                                <input type="checkbox" />
+                                                <div className="swap-on">Dark</div>
+                                                <div className="swap-off">Light</div>
+                                            </label></button>
+                                        </li>
+                                        <li>
                                             <Link
                                                 to="/signIn"
                                                 className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
