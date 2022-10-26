@@ -177,16 +177,13 @@ const Header = () => {
                                         </li>
                                         <li>
                                             <Link
-                                                to="/blog"
+                                                to="/blogs"
                                                 aria-label="Blog"
                                                 title="Blog"
                                                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                                             >
                                                 Blog
                                             </Link>
-                                        </li>
-                                        <li>
-                                            <button className="btn btn-outline font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400">Button</button>
                                         </li>
                                         <li>
                                             <Link

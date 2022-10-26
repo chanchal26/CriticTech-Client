@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../Contexts/UserContext';
-import { toast } from 'react-toastify';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
 
@@ -27,20 +27,29 @@ const SignUp = () => {
 
                 updateName(name, photoURL)
                     .then(() => {
-                        toast.success('Name and URL Updated')
+                        Swal.fire(
+                            'Good job!',
+                            'Your Name and URL Updated!',
+                            'success'
+                        )
 
 
                         verifyEmail()
                             .then(() => {
-                                toast.success('Please check your email for verification link')
+                                Swal.fire(
+                                    'Good job!',
+                                    'You have successfully signed Up!',
+                                    'Please check your email for verification link.',
+                                    'success'
+                                )
                                 navigate(from, { replace: true })
                             })
                             .catch(error => {
-                                toast.error(error.message)
+                                console.error(error.message)
                             })
                     })
                     .catch(error => {
-                        toast.error(error.message)
+                        console.error(error.message)
                     })
             })
             .catch(error => console.log(error))
@@ -50,6 +59,11 @@ const SignUp = () => {
 
     const handleGoogleLogin = () => {
         signInWithGoogle().then(result => {
+            Swal.fire(
+                'Good job!',
+                'You have successfully signed in!',
+                'success'
+            )
             console.log(result.user)
             navigate(from, { replace: true })
         })
@@ -57,6 +71,11 @@ const SignUp = () => {
 
     const handleGithubLogin = () => {
         signInWithGithub().then(result => {
+            Swal.fire(
+                'Good job!',
+                'You have successfully signed in!',
+                'success'
+            )
             console.log(result.user)
             navigate(from, { replace: true })
         })
@@ -137,13 +156,13 @@ const SignUp = () => {
                                             <path clipPath="url(#b)" fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z"></path>
                                             <path clipPath="url(#b)" fill="#4285F4" d="M48 48L17 24l-4-3 35-10z"></path>
                                         </svg>
-                                        <span className="ml-4"> Log in with Google</span>
+                                        <span className="ml-4"> Sign in with Google</span>
                                     </div>
                                 </button>
                                 <button onClick={handleGithubLogin} type="submit" className="w-full items-center block px-10 py-3.5 text-base font-medium text-center text-blue-600 transition duration-500 ease-in-out transhtmlForm border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
                                     <div className="flex items-center justify-center">
                                         <FaGithub className='text-gray-600' />
-                                        <span className="ml-4"> Log in with Github</span>
+                                        <span className="ml-4"> Sign in with Github</span>
                                     </div>
                                 </button>
                             </div>

@@ -13,6 +13,7 @@ import {
 } from 'firebase/auth'
 import React, { createContext, useEffect, useState } from 'react'
 import app from '../Configs/Firebase.config'
+import Swal from 'sweetalert2';
 
 const auth = getAuth(app)
 export const AuthContext = createContext()
@@ -57,6 +58,11 @@ const UserContext = ({ children }) => {
 
 
     const logout = () => {
+        Swal.fire(
+            'Good job!',
+            'You have successfully signed Out!',
+            'success'
+        )
         setLoading(true)
         return signOut(auth)
     }

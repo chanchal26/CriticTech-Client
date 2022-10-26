@@ -22,8 +22,7 @@ const Footer = () => {
                     </Link>
                     <div className="mt-4 lg:max-w-sm">
                         <p className="text-sm text-gray-800">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremque laudantium, totam rem aperiam.
+                            Computer programming is a fundamental skill for so many different applications, not just software development or cutting-edge research into artificial intelligence. It makes banking more accessible, smooths out supply lines, and creates those fantastic online experiences we love.
                         </p>
                     </div>
                 </div>
@@ -85,14 +84,6 @@ const Footer = () => {
                                     href="/"
                                     className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                                 >
-                                    eCommerce
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/"
-                                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                                >
                                     Business
                                 </Link>
                             </li>
@@ -123,14 +114,6 @@ const Footer = () => {
                                     className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
                                 >
                                     Media
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href="/"
-                                    className="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
-                                >
-                                    Brochure
                                 </Link>
                             </li>
                             <li>
