@@ -4,12 +4,12 @@ import { initializeApp } from "firebase/app";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAHXoXqEP9DEG4K8EsB5tft9b1jDvq6XZk",
-    authDomain: "critictech-76e4c.firebaseapp.com",
-    projectId: "critictech-76e4c",
-    storageBucket: "critictech-76e4c.appspot.com",
-    messagingSenderId: "278324763120",
-    appId: "1:278324763120:web:49e4de15d3d14f002be535"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId
 };
 
 
