@@ -8,6 +8,7 @@ const SignIn = () => {
 
 
     const [userEmail, setUserEmail] = useState('')
+    const [error, setError] = useState('')
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -31,7 +32,7 @@ const SignIn = () => {
                 navigate(from, { replace: true })
                 console.log(result.user)
             })
-            .catch(error => console.error(error.message))
+            .catch(error => setError(error.message))
     }
 
     const handleGoogleLogin = () => {
@@ -93,6 +94,8 @@ const SignIn = () => {
                                     <input id="password" name="password" type="password" autoComplete="current-password" required="" placeholder="Your Password" className="block w-full px-5 py-3 text-base text-neutral-600 placeholder-gray-300 transition duration-500 ease-in-out transhtmlForm border border-transparent rounded-lg bg-gray-50 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300" />
                                 </div>
                             </div>
+
+                            <p className='text-red-600'>{error.slice(22, 36)}</p>
 
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center">

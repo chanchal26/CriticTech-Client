@@ -27,15 +27,16 @@ const router = createBrowserRouter([
             {
                 path: '/courses/:id',
                 element: <SingleCourse />,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://critictech-server.vercel.app/courses/${params.id}`)
             },
             {
-                path: '/price',
-                element: <PrivateRoutes><Pricing /></PrivateRoutes>
+                path: '/price/:id',
+                element: <PrivateRoutes><Pricing /></PrivateRoutes>,
+                loader: ({ params }) => fetch(`https://critictech-server.vercel.app/courses/${params.id}`)
             },
             {
                 path: '/faq',
-                element: <PrivateRoutes><FAQ /></PrivateRoutes>
+                element: <FAQ />
             },
             {
                 path: '/blogs',

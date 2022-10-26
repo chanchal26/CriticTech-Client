@@ -1,13 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Pricing = () => {
+    const data = useLoaderData()
+    console.log(data);
     return (
         <section className="py-20 bg-gray-800 text-gray-100">
             <div className="container px-4 mx-auto">
                 <div className="max-w-2xl mx-auto mb-16 text-center">
-                    <span className="font-bold tracking-wider uppercase text-violet-400">Pricing</span>
-                    <h2 className="text-4xl font-bold lg:text-5xl">Choose your best plan</h2>
+                    <span className="pb-12 font-bold tracking-wider uppercase text-violet-400">Pricing</span>
+                    <h2 className="mb-6 text-4xl font-bold lg:text-5xl">{data.name} Tutorial</h2>
+                    <img className='mb-4 w-40 lg:ml-60' src={data.image} alt="" />
+                    <span className='text-violet-400 font-semibold'>Benefits Of {data.name}</span>
+                    <p className='mt-3'>{data.benefits}</p>
                 </div>
                 <div className="flex flex-wrap items-stretch -mx-4">
                     <div className="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
