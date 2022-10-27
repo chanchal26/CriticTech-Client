@@ -202,26 +202,44 @@ const Header = () => {
                                                 <div className="swap-off">Light</div>
                                             </label></button>
                                         </li>
-                                        <li>
-                                            <Link
-                                                to="/signIn"
-                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
-                                                aria-label="Sign up"
-                                                title="Sign up"
-                                            >
-                                                Sign In
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link
-                                                to="/signUp"
-                                                className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
-                                                aria-label="Sign up"
-                                                title="Sign up"
-                                            >
-                                                Sign Up
-                                            </Link>
-                                        </li>
+                                        {
+                                            user ? <>
+                                                <li>
+                                                    <button onClick={logout} className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                                                    >Sign Out</button>
+                                                </li>
+                                                <li>
+                                                    <img
+                                                        onClick={() => this.handleGallery(this)}
+                                                        onMouseOver={() => Swal.fire(
+                                                            user.displayName
+                                                        )}
+                                                        className='w-16 rounded-full' src={user.photoURL} alt="" />
+                                                </li>
+                                            </>
+                                                : <>
+                                                    <li>
+                                                        <Link
+                                                            to="/signIn"
+                                                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                                                            aria-label="Sign up"
+                                                            title="Sign up"
+                                                        >
+                                                            Sign In
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link
+                                                            to="/signUp"
+                                                            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                                                            aria-label="Sign up"
+                                                            title="Sign up"
+                                                        >
+                                                            Sign Up
+                                                        </Link>
+                                                    </li>
+                                                </>
+                                        }
                                     </ul>
                                 </nav>
                             </div>
