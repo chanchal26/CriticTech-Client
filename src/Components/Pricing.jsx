@@ -3,7 +3,6 @@ import { Link, useLoaderData } from 'react-router-dom';
 
 const Pricing = () => {
     const data = useLoaderData()
-    console.log(data);
     return (
         <section className="py-20 bg-gray-800 text-gray-100">
             <div className="container px-4 mx-auto">

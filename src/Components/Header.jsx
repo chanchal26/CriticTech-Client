@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Contexts/UserContext';
+import Swal from 'sweetalert2'
 
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
@@ -71,7 +72,12 @@ const Header = () => {
                                 >Sign Out</button>
                             </li>
                             <li>
-                                <img className='w-16 rounded-full' src={user.photoURL} alt="" />
+                                <img
+                                    onClick={() => this.handleGallery(this)}
+                                    onMouseOver={() => Swal.fire(
+                                        user.displayName
+                                    )}
+                                    className='w-16 rounded-full' src={user.photoURL} alt="" />
                             </li>
                         </>
                             : <>

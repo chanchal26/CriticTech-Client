@@ -59,9 +59,7 @@ const UserContext = ({ children }) => {
 
     const logout = () => {
         Swal.fire(
-            'Good job!',
-            'You have successfully signed Out!',
-            'success'
+            'You have successfully signed Out!'
         )
         setLoading(true)
         return signOut(auth)
